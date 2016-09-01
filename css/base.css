@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Microsoft YaHei";
+  min-width: 1200px;
+  position: relative;
+  background: #fff;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, p, pre, code, fieldset, legend, form, input, textarea, th, td, blockquote, select, button {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a, img {
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+img{
+	display: block;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.clearfix:after {
+  content: '.';
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+.position{
+	position: relative;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
