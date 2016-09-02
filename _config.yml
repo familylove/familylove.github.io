@@ -39,7 +39,7 @@ disqus_shortname:   familylove
 #bing-verify:
 email:              972575772@qq.com
 #twitter:            username
-#facebook:           username
+facebook:           username
 github:             username
 #stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
 #linkedin:          username
@@ -53,7 +53,7 @@ github:             username
 #dribbble:          username
 #youtube:           username
 #soundcloud:        username
-#weibo:             username
+weibo:             username
 #flickr:            username
 #codepen:           username
 #keybase:           username
