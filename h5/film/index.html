@@ -33,6 +33,41 @@
 		text-align:center;
 	}
 
+	#myVideo{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		top:0;
+		right:0;
+		width: 100%;
+		height: 100%;
+		background-size: 100% 100%;
+ 		background-color: black; /* in case the video doesn't fit the whole page*/
+  		background-image: /* our video */;
+  		background-position: center center;
+  		background-size: contain;
+   		object-fit: cover; /*cover video background */
+   		z-index:3;
+	}
+
+
+
+	/* Layer with position absolute in order to have it over the video
+	* --------------------------------------- */
+	#section1 .layer{
+		position: absolute;
+		z-index: 4;
+		width: 100%;
+		left: 0;
+		top: 43%;
+	}
+
+	/*solves problem with overflowing video in Mac with Chrome */
+	#section1{
+		overflow: hidden;
+	}
+
+
 	/* Fixed header and footer.
 	* --------------------------------------- */
 	#header, #footer{
@@ -83,8 +118,8 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
-				anchors: ['firstPage', 'secondPage', '3rdPage'],
-				sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+				anchors: ['firstPage', 'secondPage', '3rdPage', '4rdPage', '5rdPage'],
+				sectionsColor: ['#C63D0F', '#1bbc9b', '#1BBC9B', '#4BBFC3', '#7E8F7C'],
 				css3: true
 			});
 		});
