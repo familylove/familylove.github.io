@@ -36,11 +36,9 @@
 	#myVideo{
 		position: absolute;
 		right: 0;
-		bottom: 50px;
-		top:50px;
-		right:0;
+		bottom: 0;
+		top: 0;
 		width: 100%;
-		height: 100%;
 		background-size: 100% 100%;
  		background-color: black; /* in case the video doesn't fit the whole page*/
   		background-image: /* our video */;
@@ -120,7 +118,12 @@
 			$('#fullpage').fullpage({
 				anchors: ['firstPage', 'secondPage', '3rdPage', '4rdPage', '5rdPage'],
 				sectionsColor: ['#C63D0F', '#1bbc9b', '#1BBC9B', '#4BBFC3', '#7E8F7C'],
-				css3: true
+				css3: true,
+				afterRender: function(){
+					//playing the video
+					$('video').get(0).play();
+				}
+
 			});
 		});
 	</script>
@@ -139,7 +142,7 @@
 		</div>
 	</div>
 	<div class="section " id="section1">
-		<video autoplay="autoplay" loop muted controls="false" id="myVideo">
+		<video autoplay="autoplay" loop muted controls="controls" id="myVideo">
 			<source src="../../assets/imgs/flowers.mp4" type="video/mp4">
 			<source src="../../assets/imgs/flowers.webm" type="video/webm">
 		</video>
