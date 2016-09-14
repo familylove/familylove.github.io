@@ -56,10 +56,10 @@
     {% unless feature contains 'http://' or feature contains 'https://' %}{% capture feature %}{{ site.url }}/{{ feature }}{% endcapture %}{% endunless %}
     <style type="text/css">.feature {background-image:url({{ feature }});}</style>
     {% endif %}
-    <!-- hide duoshuo adviertisement -->
+    <!-- hide duoshuo adviertisement 
     {% if page.comments != false %}
     <style type="text/css">#ds-thread.ds-thread {#ds-reset {.ds-comments-info {
         .ds-comments-tabs {li.ds-tab {.ds-comments-tab-weibo { display: none;}}}}
         .ds-powered-by { display: none;}}}</style>
-    {% endif %}
+    {% endif %}-->
 
