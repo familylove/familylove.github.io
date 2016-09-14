@@ -27,7 +27,6 @@ comments: false
                     <ul>
                         <li class="wow fadeInLeft" data-wow-duration="1.5s">
                             <a class="zoombtn" href="./film/index.html">头尾固定全屏滚动</a>
-                            <p>头尾固定全屏滚动翻页</p>
                         </li>
                     </ul>
                 </div>
