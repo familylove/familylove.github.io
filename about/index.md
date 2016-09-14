@@ -6,7 +6,9 @@ date: 2016-03-21
 comments: false
 ---
     
-<center><a href="http://familylove.github.io/"><b>向先进</b></a> 1991.03.03, 2012年毕业于安徽工业大学, 爱笑，爱游戏，爱编程</center>
+<center><a href="http://familylove.github.io/"><b>向先进</b></a> 
+
+1991.03.03, 2012年毕业于安徽工业大学, 爱笑，爱游戏，爱编程</center>
 
 ## Features
 
