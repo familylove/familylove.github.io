@@ -59,11 +59,10 @@
     <!-- hide duoshuo adviertisement -->
     {% if page.comments != false %}
     <style type="text/css">
-    .ds-thread {
-        .ds-powered-by { display: none;}
-        .ds-sync { display: none;}
-    }
+    .ds-thread .ds-sync { display: none;}
+    #ds-reset .ds-powered-by { display: none;}
     #ds-reset .ds-dialog-footer { display: none;}
+    #ds-reset .ds-dialog-close {right:11px; top:13px;}
     </style>
     {% endif %}
 
