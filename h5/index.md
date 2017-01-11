@@ -28,6 +28,9 @@ comments: false
                         <li class="wow fadeInLeft" data-wow-duration="1.5s">
                             <a class="zoombtn" href="./film/index.html">头尾固定全屏滚动</a>
                         </li>
+                        <li class="wow fadeInLeft" data-wow-duration="1.5s">
+                            <a class="zoombtn" href="./wedding/index.html">请帖</a>
+                        </li>
                     </ul>
                 </div>
             </div>
