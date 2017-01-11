@@ -21,7 +21,7 @@ function isAndroid() {
 	var a = navigator.userAgent,
 		b = (navigator.appVersion, a.indexOf("Android") > -1 || a.indexOf("Linux") > -1);
 	return b
-}
+
 function tabletCheck() {
 	var a = /ipad|android|android 3.0|xoom|sch-i800|playbook|tablet|kindle/i.test(navigator.userAgent.toLowerCase());
 	return a
@@ -4488,6 +4488,7 @@ function(a, b) {
 	});
 	var isNewPreviewLocation = /[http|https]:\/\/.*\/m\/scene\/preview\//.test(window.location.href);
 	url = /[http|https]:\/\/.*\/v-/.test(window.location.href) ? window.location.href.split("/v-")[1] : isNewPreviewLocation ? window.location.href.split("/m/scene/preview/")[1] : window.location.href.split("id=")[1], window.viewData && (url = scene.code);
+	url = "s70331EU3A6858V6";
 	var sceneId = url.split("#")[0].split("&")[0].split("?")[0];
 	isNewPreviewLocation && (sceneId = sceneId.substring(0, sceneId.indexOf(".html")));
 	var param = url.split(sceneId)[1];
