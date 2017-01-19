@@ -1,14 +1,9 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>我们结婚了</title>
-	<meta name="author" content="Alvaro Trigo Lopez" />
-	<meta name="description" content="fullPage fixed header and footer." />
-	<meta name="keywords"  content="fullpage,jquery,demo,screen,fixed, header,footer, absolute, positioned,css" />
-	<meta name="Resource-type" content="Document" />
-
+	<meta name="author" content="xiangxianjn" />
 
 	<link rel="stylesheet" type="text/css" href="../../assets/css/jquery.fullPage.css" />
 	<link rel="stylesheet" type="text/css" href="../../assets/css/film/examples.css" />
@@ -43,15 +38,6 @@
 		text-align: center; 
 		width: 100%
 	}
-	.intro{
-		padding: 3% 0 0;
-	}
-
-	.intro div{
-		color: #fff;
-		padding-top: 15px;
-	}
-
 	.clearfix:after {
 	     content: ".";
 	     display: block;
@@ -141,6 +127,16 @@
 		height: 100%; 
 		position: relative;
 	}
+
+	.intro{
+		padding: 0;
+	}
+
+	.intro div{
+		color: #fff;
+		padding-top: 15px;
+	}
+
 
 	.sec1-bg{
 		text-align: center;
@@ -425,7 +421,7 @@
 
 <div id="audio_btn" class="off video_exist rotate" style="display: block; position: fixed; z-index: 100;">
     <div id="yinfu"></div>
-    <audio loop="" src="http://7xsir2.com1.z0.glb.clouddn.com/Touch%20love%201.mp3" id="media" autoplay="antoplay" preload=""></audio>
+    <audio loop="" src="https://7xsir2.com1.z0.glb.clouddn.com/Touch%20love%201.mp3" id="media" autoplay="antoplay" preload=""></audio>
 </div>
 <div id="fullpage">
     <!-- 欢迎页面 start-->
@@ -594,7 +590,7 @@
     }
     //创建一个Icon
     function createIcon(json){
-        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        var icon = new BMap.Icon("https://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
         return icon;
     }
 //标注线数组
