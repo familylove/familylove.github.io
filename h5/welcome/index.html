@@ -22,14 +22,14 @@
 	/* Style for our header texts
 	* --------------------------------------- */
 	h1{
-		font-size: 5em;
+		font-size: 2em;
 		font-family: arial,helvetica;
 		color: #fff;
 		margin:0;
 		padding:0;
 	}
 	h2{
-		font-size: 4em;
+		font-size: 1em;
 		color: #fff;
 		margin:0;
 		padding:0;
@@ -78,7 +78,7 @@
 	* --------------------------------------- */
 	#section1{
 		background-image: url(image/bg1.jpg);
-		padding: 30% 0 0 0;
+		padding: 10% 0 0 0;
 	}
 	#section2{
 		background-image: url(image/bg2.jpg);
@@ -141,27 +141,29 @@
 	.sec1-bg{
 		text-align: center;
 		width: 100%; 
-		height: 450px; 
+		height: 70%;
 		background-image: url(./image/1.png); 
-		background-size: 600px 450px;
+		background-size: 215px 180px;
 		background-repeat:no-repeat;
 		background-position:center;
 	}
 
 	.sec1-bg label{
-		color: #999999;
+		color: #888888;
 	}
 
 	.sec1-title{
+		font-size: 1.5em;
 		line-height: inherit; 
 		background-color: initial; 
-		padding-top: 268px;
+		padding-top: 49%;
 	}
 
 	.sec1-date{
+		font-size: 1em
 		line-height: inherit; 
 		background-color: initial; 
-		padding-top: 10px;
+		padding-top: 1%;
 	}
 
 	/** ---- sec4 ----**/
@@ -193,36 +195,56 @@
 
 	/** ---- sec5  ----**/
 	.sec5-map{
-		padding: 10px 60px 20px;
+		padding: 6% 10%;
 		width: 100%;
-		height: 600px;
+		height: 60%;
 	}
 	.sec5-way{
 		padding: 3% 0;
 		width: 100%;
-		height: 200px;
+		height: 20%;
 		box-shadow: rgba(0, 0, 0, 0) 0; 
 	}
 
 	.sec5-m{
-		padding-right: 20px;
+		padding-right: 10%;
 		display: inline-block;
-		width: 45%;
+		width: 22%;
 	}
 	.sec5-f{
-		padding-left: 20px;
+		padding-left: 10%;
 		display: inline-block;
-		width: 45%;
+		width: 22%;
 	}
-	#section5 a{
+
+	#section a div{
+		height: inherit;
+	}
+
+	.sec5-m a{
 		cursor: default; 
-		width: 115px; 
+		background-image: url(./image/man.png); 
+		background-size: 115px 45px;
+		background-repeat:no-repeat;
+		background-position:center;
+		display: inline-block;
+		width: 115px;
+		height: 45px;
+	}
+	.sec5-f a{
+		cursor: default; 
+		background-image: url(./image/women.png); 
+		background-size: 115px 45px;
+		background-repeat:no-repeat;
+		background-position:center;
+		display: inline-block;
+		width: 115px;
 		height: 45px;
 	}
 
 	#myVideo{
 		position: absolute;
-		top: 400px;
+		top: 30%;
 		left: 0;
 		width: 100%;
 		background-size: 100% 100%;
@@ -427,10 +449,10 @@
 		<div class="relative">
 			<div class="sec1-bg">
 				<div class="sec1-title">
-					<label style="font-size: 42px;">向先进 &nbsp;&nbsp; &nbsp;&nbsp;王梅琴</label>
+					<label>向先进 &nbsp;&nbsp; &nbsp;&nbsp;王梅琴</label>
 				</div>
 				<div class="sec1-date">
-					<label style="font-size: 36px;">2017.02.18</label>
+					<label>2017.02.18</label>
 				</div>
 			</div>
 			<p style="clear: both;"></p>
@@ -471,14 +493,14 @@
 	<div class="section" id="section5" name="section5">
 		<div class="sec5-map">
 		  <!--百度地图容器-->
-		  <div style="width:850px;height:550px;border:#ccc solid 1px;" id="dituContent"></div>
+		  <div style="width: 86%; height:100%; border:#ccc solid 1px;" id="dituContent"></div>
 		</div>
 		<div class="">
 			<div class="sec5-m">
-				<a href="tel:18217149740"><img src="./image/man.png"></a>
+				<a href="tel:18217149740"><div>&nbsp;</div></a>
 			</div>
 			<div class="sec5-f">
-				<a href="tel:18217149740"><img src="./image/women.png"></a>
+				<a href="tel:18217149740"><div>&nbsp;</div></a>
 			</div>
 		</div>
 		<div class="sec5-way">
@@ -494,7 +516,7 @@
 	</div>
 </div>
 </body>
-<script type="text/javascript" src="https://api.map.baidu.com/getscript?v=1.1&ak=&services=true"></script>
+<script type="text/javascript" src="https://api.map.baidu.com/getscript?v=1.1&ak=&services=true&s=1"></script>
 <script type="text/javascript">
 	window.BMap_loadScriptTime = (new Date).getTime();
     //创建和初始化地图函数：
@@ -588,7 +610,7 @@
     }
     //创建一个Icon
     function createIcon(json){
-        var icon = new BMap.Icon("https://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
         return icon;
     }
 //标注线数组
