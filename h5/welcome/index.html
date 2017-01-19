@@ -3,7 +3,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>FullScreen Backgrounds - fullPage.js</title>
+	<title>我们结婚了</title>
 	<meta name="author" content="Alvaro Trigo Lopez" />
 	<meta name="description" content="fullPage fixed header and footer." />
 	<meta name="keywords"  content="fullpage,jquery,demo,screen,fixed, header,footer, absolute, positioned,css" />
@@ -19,7 +19,7 @@
 	    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
 	    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
 	</style>
-	<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+	<link rel="stylesheet" href="./css/bmap.css">
  <!--引用百度地图API-->
 
 <style>
@@ -44,7 +44,7 @@
 		width: 100%
 	}
 	.intro{
-		padding: 200px 0 20px;
+		padding: 100px 0 20px;
 	}
 
 	.intro div{
@@ -100,7 +100,6 @@
 	}
 	#section3{
 		background-image: url(image/bg2.jpg);
-		padding: 6% 0 0 0;
 	}
 	#section4{
 		background-image: url(image/bg4.jpg);
@@ -241,20 +240,24 @@
 		animation: zoomIn 2s ease 0s 1; 
 	}
 
+	.ac-1-2{
+		animation: fadeInUp 3s ease 0s 1; 
+	}
+
 	.ac-2-1{
-		transform: none; animation: zoomIn 2s ease 1s 1 both;
+		transform: none; animation: zoomIn 2s ease 0s 1 both;
 	}
 	.ac-2-2{
-		transform: none; animation: zoomIn 2s ease 2s 1 both;
+		transform: none; animation: zoomIn 2s ease 1s 1 both;
 	}
 	.ac-2-3{
-		transform: none; animation: zoomIn 2s ease 3s 1 both;
+		transform: none; animation: zoomIn 2s ease 2s 1 both;
 	}
 	.ac-2-4{
-		transform: none; animation: zoomIn 2s ease 4s 1 both;
+		transform: none; animation: zoomIn 2s ease 3s 1 both;
 	}
 	.ac-2-5{
-		transform: none; animation: zoomIn 2s ease 5s 1 both;
+		transform: none; animation: zoomIn 2s ease 4s 1 both;
 	}
 
 	.ac-4-1{
@@ -295,7 +298,6 @@
 	<script type="text/javascript" src="../../assets/js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="../../assets/js/vendors/jquery.slimscroll.min.js"></script>
 	<script type="text/javascript" src="../../assets/js/jquery.fullPage.js"></script>
-	<script type="text/javascript" src="../../assets/js/film/examples.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -311,13 +313,15 @@
 					//playing the video
 					//$('#myVideo').get(0).play();
 					$("div.sec1-title").addClass("ac-1-1");						
-					$("div.sec1-date").addClass("ac-1-1");						
+					$("div.sec1-date").addClass("ac-1-2");
+					$("#section2 .intro div").hide();						
 				},
 				afterLoad: function(anchorLink, index){
 					if(index == 1){
 						$("div.sec1-title").addClass("ac-1-1");						
-						$("div.sec1-date").addClass("ac-1-1");						
+						$("div.sec1-date").addClass("ac-1-2");						
 					}else if(index == 2){
+						$("#section2 .intro div").show();
 						$("#section2 .intro div").eq(0).addClass("ac-2-1");
 						$("#section2 .intro div").eq(1).addClass("ac-2-2");
 						$("#section2 .intro div").eq(2).addClass("ac-2-3");
@@ -342,8 +346,9 @@
 				onLeave: function(index, nextIndex, direction){
 					if(index == 1){
 						$("div.sec1-title").removeClass("ac-1-1");						
-						$("div.sec1-date").removeClass("ac-1-1");						
+						$("div.sec1-date").removeClass("ac-1-2");						
 					}else if(index == 2){
+						$("#section2 .intro div").hide();
 						$("#section2 .intro div").eq(0).removeClass("ac-2-1");
 						$("#section2 .intro div").eq(1).removeClass("ac-2-2");
 						$("#section2 .intro div").eq(2).removeClass("ac-2-3");
@@ -462,7 +467,9 @@
 	</div>
 </div>
 </body>
+<script type="text/javascript" src="./js/getscript?v=1.1&ak=&services=true"></script>
 <script type="text/javascript">
+	window.BMap_loadScriptTime = (new Date).getTime();
     //创建和初始化地图函数：
     function initMap(){
         createMap();//创建地图
