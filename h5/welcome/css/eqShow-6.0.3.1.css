@@ -2261,21 +2261,21 @@ to {
 	-moz-transform:rotate(0deg)
 }
 to {
-	-moz-transform:rotate(359deg)
+	-moz-transform:rotate(360deg)
 }
 }@-o-keyframes rotateIn {
 	from {
 	-o-transform:rotate(0deg)
 }
 to {
-	-o-transform:rotate(359deg)
+	-o-transform:rotate(360deg)
 }
 }@keyframes rotateIn {
 	from {
 	transform:rotate(0deg)
 }
 to {
-	transform:rotate(359deg)
+	transform:rotate(360deg)
 }
 }.rotateIn {
 	-webkit-animation-name:rotateIn;
