@@ -44,7 +44,7 @@
 		width: 100%
 	}
 	.intro{
-		padding: 100px 0 20px;
+		padding: 3% 0 0;
 	}
 
 	.intro div{
@@ -170,13 +170,13 @@
 
 	/** ---- sec4 ----**/
 	.sec4-bg1{
-		padding-top: 200px;
+		padding-top: 15%;
 		height: 38px; 
 		width: 100%;
 	}
 
 	.sec4-bg2{
-		padding: 200px 0 20px; 
+		padding: 20% 0 0; 
 		width: 100%; 
 		height: 62px;
 		transform: none; 
@@ -188,7 +188,7 @@
 	}
 
 	.sec4-bg3{
-		padding:280px 0 20px; 
+		padding:25% 0 0; 
 		width: 100%; 
 		height: 62px;
 		transform: none; 
@@ -197,7 +197,7 @@
 
 	/** ---- sec5  ----**/
 	.sec5-map{
-		padding: 80px 60px 20px;
+		padding: 10px 60px 20px;
 		width: 100%;
 		height: 600px;
 	}
@@ -210,9 +210,13 @@
 
 	.sec5-m{
 		padding-right: 20px;
+		display: inline-block;
+		width: 45%;
 	}
 	.sec5-f{
 		padding-left: 20px;
+		display: inline-block;
+		width: 45%;
 	}
 	#section5 a{
 		cursor: default; 
@@ -314,10 +318,23 @@
 					//$('#myVideo').get(0).play();
 					$("div.sec1-title").addClass("ac-1-1");						
 					$("div.sec1-date").addClass("ac-1-2");
-					$("#section2 .intro div").hide();						
+					//默认全隐藏
+					$("#section2 .intro div").hide();
+
+					$("#section4 .sec4-bg1").hide();
+					$("#section4 .sec4-bg2").hide();
+					$("#section4 .sec4-bg3").hide();
+					
+					$("#section5 .sec5-map").hide();
+					$("#section5 .sec5-way div").hide();
+					$("#section5 .sec5-m").hide();
+					$("#section5 .sec5-f").hide();
+
 				},
 				afterLoad: function(anchorLink, index){
 					if(index == 1){
+						$("div.sec1-title").show();
+						$("div.sec1-date").show();
 						$("div.sec1-title").addClass("ac-1-1");						
 						$("div.sec1-date").addClass("ac-1-2");						
 					}else if(index == 2){
@@ -330,10 +347,17 @@
 					}else if(index == 3){
 						slide();
 					}else if(index == 4){
+						$("#section4 .sec4-bg1").show();
+						$("#section4 .sec4-bg2").show();
+						$("#section4 .sec4-bg3").show();
 						$("#section4 .sec4-bg1").addClass("ac-4-1");
 						$("#section4 .sec4-bg2").addClass("ac-4-2");
 						$("#section4 .sec4-bg3").addClass("ac-4-3");
 					}else if(index == 5){
+						$("#section5 .sec5-map").show();
+						$("#section5 .sec5-way div").show();
+						$("#section5 .sec5-m").show();
+						$("#section5 .sec5-f").show();
 						$("#section5 .sec5-map").addClass("ac-5-1");
 						$("#section5 .sec5-way div").eq(0).addClass("ac-5-2");
 						$("#section5 .sec5-way div").eq(1).addClass("ac-5-3");
@@ -345,6 +369,8 @@
 				},
 				onLeave: function(index, nextIndex, direction){
 					if(index == 1){
+						$("div.sec1-title").hide();
+						$("div.sec1-date").hide();
 						$("div.sec1-title").removeClass("ac-1-1");						
 						$("div.sec1-date").removeClass("ac-1-2");						
 					}else if(index == 2){
@@ -357,13 +383,20 @@
 					}else if(index == 3){
 						clearSlide();
 					}else if(index == 4){
+						$("#section4 .sec4-bg1").hide();
+						$("#section4 .sec4-bg2").hide();
+						$("#section4 .sec4-bg3").hide();
 						$("#section4 .sec4-bg1").removeClass("ac-4-1");
 						$("#section4 .sec4-bg2").removeClass("ac-4-2");
 						$("#section4 .sec4-bg3").removeClass("ac-4-3");
 					}else if(index == 5){
+						$("#section5 .sec5-map").hide();
+						$("#section5 .sec5-way div").hide();
+						$("#section5 .sec5-m").hide();
+						$("#section5 .sec5-f").hide();
 						$("#section5 .sec5-map").removeClass("ac-5-1");
-						$("#section5 .sec5-way span").eq(0).removeClass("ac-5-2");
-						$("#section5 .sec5-way span").eq(1).removeClass("ac-5-3");
+						$("#section5 .sec5-way div").eq(0).removeClass("ac-5-2");
+						$("#section5 .sec5-way div").eq(1).removeClass("ac-5-3");
 						$("#section5 .sec5-m").removeClass("ac-5-m");
 						$("#section5 .sec5-f").removeClass("ac-5-f");
 					}else if(index == 6){
@@ -447,12 +480,12 @@
 		  <div style="width:850px;height:550px;border:#ccc solid 1px;" id="dituContent"></div>
 		</div>
 		<div class="">
-			<span class="sec5-m">
+			<div class="sec5-m">
 				<a href="tel:18217149740"><img src="./image/man.png"></a>
-			</span>
-			<span class="sec5-f">
+			</div>
+			<div class="sec5-f">
 				<a href="tel:18217149740"><img src="./image/women.png"></a>
-			</span>
+			</div>
 		</div>
 		<div class="sec5-way">
 			<div><h2>公交路线：庐城公交<->三河方向到石头加油站下车</h2></div>
@@ -467,7 +500,7 @@
 	</div>
 </div>
 </body>
-<script type="text/javascript" src="./js/getscript?v=1.1&ak=&services=true"></script>
+<script type="text/javascript" src="https://api.map.baidu.com/getscript?v=1.1&ak=&services=true"></script>
 <script type="text/javascript">
 	window.BMap_loadScriptTime = (new Date).getTime();
     //创建和初始化地图函数：
