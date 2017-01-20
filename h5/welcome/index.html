@@ -85,7 +85,7 @@
 	/* Defining each section background and styles
 	* --------------------------------------- */
 	#section1{
-		background-image: url(image/C15.jpg);
+		background-image: url(image/C16.jpg);
 		padding: 10% 0 0 0;
 	}
 	#section2{
@@ -258,6 +258,10 @@
 		height: 20%;
 		box-shadow: rgba(0, 0, 0, 0) 0; 
 	}
+	.sec5-way div{
+		padding: 2% 0;
+		width: 100%;
+	}
 
 	.sec5-m{
 		padding-right: 10%;
@@ -400,7 +404,6 @@
 				verticalCentered: true,
 				anchors: ['1', '2', '3', '4', '5', '6'],
 				continuousVertical: true,
-				loopBottom: true,
 				afterRender: function(){
 					//playing the video
 					//$('#myVideo').get(0).play();
@@ -504,10 +507,6 @@
 			clearInterval(slideInterval);
 		}
 	</script>
-
-<div id='wx_pic' style='margin:0 auto;display:none;'>
-	<img src='/image/share.png' />
-</div>
 </head>
 <script>
     document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
@@ -551,6 +550,10 @@
     }, false)
 </script>
 <body>
+
+<div id='wx_pic' style='margin:0 auto;display:none;'>
+	<img src='image/share.png' />
+</div>
 
 <!-- div id="header">Mr Family & Mrs Mary</div>
 <div id="footer">WE ARE MARRIED</div -->
