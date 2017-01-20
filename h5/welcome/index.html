@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<title>我们结婚了</title>
+	<title>MY LOVE</title>
 	<meta name="author" content="xiangxianjn" />
 
 	<link rel="stylesheet" type="text/css" href="../../assets/css/jquery.fullPage.css" />
@@ -30,6 +30,13 @@
 	}
 	h2{
 		font-size: 2em;
+		font-family: arial,helvetica;
+		color:  #fff;
+		margin:0;
+		padding:0;
+	}
+	h3{
+		font-size: 1.5em;
 		font-family: arial,helvetica;
 		color:  #fff;
 		margin:0;
@@ -107,14 +114,42 @@
  	/*Adding background for the slides
 	* --------------------------------------- */
 	#slide1{
-		background-image: url(image/bg3.jpg);
+		background-image: url(image/C13.jpg);
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
 		padding: 6% 0 0 0;
 	}
 	#slide2{
-		background-image: url(image/bg5.jpg);
+		background-image: url(image/C14.jpg);
+		background-repeat:no-repeat;
+		background-position:center;
+		background-size: cover;
+		padding: 6% 0 0 0;
+	}
+	#slide3{
+		background-image: url(image/C5.jpg);
+		background-repeat:no-repeat;
+		background-position:center;
+		background-size: cover;
+		padding: 6% 0 0 0;
+	}
+	#slide4{
+		background-image: url(image/C15.jpg);
+		background-repeat:no-repeat;
+		background-position:center;
+		background-size: cover;
+		padding: 6% 0 0 0;
+	}
+	#slide5{
+		background-image: url(image/C12.jpg);
+		background-repeat:no-repeat;
+		background-position:center;
+		background-size: cover;
+		padding: 6% 0 0 0;
+	}
+	#slide6{
+		background-image: url(image/C4.jpg);
 		background-repeat:no-repeat;
 		background-position:center;
 		background-size: cover;
@@ -184,7 +219,7 @@
 		box-shadow: rgba(0, 0, 0, 0) 0; 
 	}
 
-	.sec4-bg2 h2, .sec5-way h2{
+	.sec4-bg2 h2{
 		color: rgb(35, 163, 211);
 	}
 
@@ -198,7 +233,7 @@
 
 	/** ---- sec5  ----**/
 	.sec5-map{
-		padding: 1% 5%;
+		padding: 1% 0;
 		width: 100%;
 		height: 42%;
 	}
@@ -325,8 +360,20 @@
 	<script type="text/javascript" src="../../assets/js/jquery.fullPage.js"></script>
 
 	<script type="text/javascript">
+		function load_ready(){
+		    $("#media")[0].play();
+		    $("#media")[0].loop=true;
+		}
 		$(document).ready(function() {
-			$("#media")[0].play();
+		    $("#media")[0].load();
+		    $("#media")[0].addEventListener("canplaythrough", function(){
+		        load_ready();
+		    });
+		    $("#myVideo")[0].load();
+		    $("#myVideo")[0].addEventListener("canplaythrough", function(){
+		        
+		    });
+
 
 			$('#fullpage').fullpage({
 				verticalCentered: true,
@@ -444,7 +491,7 @@
 
 <div id="audio_btn" class="off video_exist rotate" style="display: block; position: fixed; z-index: 100;">
     <div id="yinfu"></div>
-    <audio loop="" src="http://7xsir2.com1.z0.glb.clouddn.com/Touch%20love%201.mp3" id="media" autoplay="antoplay" preload=""></audio>
+    <audio loop="" src="mylove.mp3" id="media" autoplay="antoplay" preload=""></audio>
 </div>
 <div id="fullpage">
     <!-- 欢迎页面 start-->
@@ -474,6 +521,10 @@
 	<div class="section" id="section3" name="section3">
 	    <div class="slide" id="slide1"></div>
 	    <div class="slide" id="slide2"></div>
+	    <div class="slide" id="slide3"></div>
+	    <div class="slide" id="slide4"></div>
+	    <div class="slide" id="slide5"></div>
+	    <div class="slide" id="slide6"></div>
 	</div>
 	<div class="section" id="section4" name="section4">
 		<div class="sec4-bg1">
@@ -496,7 +547,7 @@
 	<div class="section" id="section5" name="section5">
 		<div class="sec5-map">
 		  <!--百度地图容器-->
-		  <div style="width: 90%; height:80%; border:#ccc solid 1px;" id="dituContent"></div>
+		  <div style="margin-left: 0; width: 100%; height:80%; border:#ccc solid 1px;" id="dituContent"></div>
 		</div>
 		<div class="">
 			<div class="sec5-m">
@@ -507,8 +558,8 @@
 			</div>
 		</div>
 		<div class="sec5-way">
-			<div><h2>公交路线：庐城公交<->三河方向到石头加油站下车</h2></div>
-			<div><h2>驾车路线：导航至石头镇兴华高级中学附近加油站</h2></div>
+			<div><h3>公交路线：庐城公交<->三河方向 石头镇下车</h3></div>
+			<div><h3>驾车路线：导航至石头镇安德利超市对面加油站</h3></div>
 		</div>
 	</div>
 	<div class="section" id="section6" name="section6">
@@ -529,12 +580,13 @@
         addMapControl();//向地图添加控件
         addMarker();//向地图中添加marker
         addPolyline();//向地图中添加线
+        addRemark();//向地图中添加文字标注
     }
     
     //创建地图函数：
     function createMap(){
         var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
-        var point = new BMap.Point(117.281794,31.426783);//定义一个中心点坐标
+        var point = new BMap.Point(117.28182,31.427899);//定义一个中心点坐标
         map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
         window.map = map;//将map变量存储在全局
     }
@@ -561,7 +613,7 @@
     }
     
     //标注点数组
-    var markerArr = [{title:"汝昌大酒店",content:"乘坐公交车&nbsp;在石头加油站下车",point:"117.2836|31.42857",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+    var markerArr = [{title:"庐江汝昌大酒店",content:"石头镇安德利超市对面加油站附近",point:"117.283554|31.428407",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
 		 ];
     //创建marker
     function addMarker(){
@@ -633,6 +685,20 @@
 			map.addOverlay(line);
 		}
 	}
+//文字标注数组
+    var lbPoints = [{point:"117.284254|31.430857",content:"s103为合铜公路"}
+		 ];
+    //向地图中添加文字标注函数
+    function addRemark(){
+        for(var i=0;i<lbPoints.length;i++){
+            var json = lbPoints[i];
+            var p1 = json.point.split("|")[0];
+            var p2 = json.point.split("|")[1];
+            var label = new BMap.Label("<div style='padding:2px;'>"+json.content+"</div>",{point:new BMap.Point(p1,p2),offset:new BMap.Size(3,-6)});
+            map.addOverlay(label);
+            label.setStyle({borderColor:"#999"});
+        }
+    }
     
     initMap();//创建和初始化地图
 </script>
