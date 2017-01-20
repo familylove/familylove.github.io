@@ -85,7 +85,7 @@
 	/* Defining each section background and styles
 	* --------------------------------------- */
 	#section1{
-		background-image: url(image/bg1.jpg);
+		background-image: url(image/C16.jpg);
 		padding: 10% 0 0 0;
 	}
 	#section2{
@@ -233,7 +233,6 @@
 
 	/** ---- sec5  ----**/
 	.sec5-map{
-		padding: 1% 0;
 		width: 100%;
 		height: 42%;
 	}
@@ -484,6 +483,47 @@
 	</script>
 
 </head>
+<script>
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    window.shareData = {
+        "timeLineLink": "https://familylove.github.io/h5/welcome/",   
+        "sendFriendLink": "https://familylove.github.io/h5/welcome/",
+        "weiboLink": "https://familylove.github.io/h5/welcome/",
+        "tTitle": "我们结婚了",
+        "tContent": "诚邀您参加向先进和王梅琴的婚礼",
+        "fTitle": "我们结婚了",
+        "fContent": "诚邀您参加向先进和王梅琴的婚礼",
+        "wContent": "诚邀您参加向先进和王梅琴的婚礼"
+        };
+        // 发送给好友
+        WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+            WeixinJSBridge.invoke('sendAppMessage', {
+                "img_url": "imgge/share.png",
+                "img_width": "300",
+                "img_height": "300",
+                "link": window.shareData.sendFriendLink,
+                "desc": window.shareData.fContent,
+                "title": window.shareData.fTitle
+            }, function (res) {
+                _report('send_msg', res.err_msg);
+            })
+        });
+        // 分享到朋友圈
+        WeixinJSBridge.on('menu:share:timeline', function (argv) {
+            WeixinJSBridge.invoke('shareTimeline', {
+                "img_url": "imgge/share.png",
+                "img_width": "300",
+                "img_height": "300",
+                "link": window.shareData.timeLineLink,
+                "desc": window.shareData.tContent,
+                "title": window.shareData.tTitle
+            }, function (res) {
+                _report('timeline', res.err_msg);
+            });
+        });
+ 
+    }, false)
+</script>
 <body>
 
 <!-- div id="header">Mr Family & Mrs Mary</div>
@@ -491,7 +531,7 @@
 
 <div id="audio_btn" class="off video_exist rotate" style="display: block; position: fixed; z-index: 100;">
     <div id="yinfu"></div>
-    <audio loop="" src="mylove.mp3" id="media" autoplay="antoplay" preload=""></audio>
+    <audio loop="" src="http://7xsir2.com1.z0.glb.clouddn.com/Touch%20love%201.mp3" id="media" autoplay="antoplay" preload=""></audio>
 </div>
 <div id="fullpage">
     <!-- 欢迎页面 start-->
@@ -554,7 +594,7 @@
 				<a href="tel:18217149740"><div>&nbsp;</div></a>
 			</div>
 			<div class="sec5-f">
-				<a href="tel:18217149740"><div>&nbsp;</div></a>
+				<a href="tel:18326925916"><div>&nbsp;</div></a>
 			</div>
 		</div>
 		<div class="sec5-way">
@@ -563,10 +603,6 @@
 		</div>
 	</div>
 	<div class="section" id="section6" name="section6">
-		<video autoplay="autoplay" loop muted controls="controls" id="myVideo">
-			<source src="../../assets/imgs/flowers.mp4" type="video/mp4">
-			<source src="../../assets/imgs/flowers.webm" type="video/webm">
-		</video>
 	</div>
 </div>
 </body>
