@@ -108,6 +108,7 @@
 		padding: 6% 0 0 0;
 	}
 	#section3 h1{
+		font-family: arial,helvetica;
 		color: #000;
 	}
 
@@ -174,7 +175,7 @@
 	}
 
 
-	.sec1-bg{
+	.sec1-bg-temp{
 		text-align: center;
 		width: 100%; 
 		height: 70%;
@@ -185,7 +186,8 @@
 	}
 
 	.sec1-bg label{
-		color: #888888;
+		font-family: arial,helvetica;
+		color: #fff;
 	}
 
 	.sec1-title{
@@ -193,7 +195,7 @@
 		font-family: arial,helvetica;
 		line-height: inherit; 
 		background-color: initial; 
-		padding-top: 60%;
+		padding-top: 90%;
 	}
 
 	.sec1-date{
@@ -377,6 +379,7 @@
 			$('#fullpage').fullpage({
 				verticalCentered: true,
 				anchors: ['1', '2', '3', '4', '5', '6'],
+				continuousVertical: true,
 				loopBottom: true,
 				afterRender: function(){
 					//playing the video
@@ -603,6 +606,10 @@
 		</div>
 	</div>
 	<div class="section" id="section6" name="section6">
+		<video autoplay="autoplay" loop muted controls="controls" id="myVideo" style="display: none;">
+			<source src="../../assets/imgs/flowers.mp4" type="video/mp4">
+			<source src="../../assets/imgs/flowers.webm" type="video/webm">
+		</video>
 	</div>
 </div>
 </body>
